@@ -21,8 +21,10 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
+    "src",
     "**/*.tsx"
   ],
+  "references": [{ "path": "./tsconfig.node.json" }],
   "exclude": [
     "node_modules"
   ]
