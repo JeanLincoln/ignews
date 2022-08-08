@@ -1,5 +1,7 @@
 
-import {GetStaticProps} from '../../node_modules/next'
+import { GetStaticProps } from 'next'
+import Image from 'next/image'
+import React from 'react'
 import Head from '../../node_modules/next/head'
 import { SubscribeButton } from '../components/SubscribeButton/index'
 import { stripe } from '../services/stripe'
@@ -7,7 +9,7 @@ import styles from './home.module.scss'
 
 type HomeProps = {
   product:{
-    priceId:string,
+    priceId:string ,
     amount:number
   }
 }
@@ -28,7 +30,7 @@ export default function Home({product}:HomeProps) {
           </p>
           <SubscribeButton priceId={product.priceId}/>
         </section>
-        <img src="/images/Avatar.svg" alt="Girl Coding" />
+        <Image width={334} height={520} src="/images/Avatar.svg" alt="Girl Coding" />
       </main>
     </>
       )
@@ -42,7 +44,7 @@ export const getStaticProps: GetStaticProps = async () => {
     amount:new Intl.NumberFormat('en-US',{
       style:'currency',
       currency:'USD'
-    }).format(price.unit_amount / 100)
+    }).format((price as any).unit_amount / 100)
   }
 
   return{
