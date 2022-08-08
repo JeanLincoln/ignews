@@ -1,3 +1,4 @@
+import React from 'react'
 import { SignInButton } from '../SignInButton/index'
 import styles from './styles.module.scss'
 
