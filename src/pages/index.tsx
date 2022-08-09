@@ -1,11 +1,10 @@
-
 import { GetStaticProps } from 'next'
-import Image from 'next/image'
 import React from 'react'
+import Image from 'next/image'
 import Head from '../../node_modules/next/head'
 import { SubscribeButton } from '../components/SubscribeButton/index'
 import { stripe } from '../services/stripe'
-import styles from './home.module.scss'
+import styles from '../styles/home.module.scss'
 
 type HomeProps = {
   product:{
