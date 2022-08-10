@@ -1,5 +1,4 @@
 import Stripe from 'stripe'
-import React from 'react'
 import { version } from '../../package.json'
 
 export const stripe = new Stripe(
